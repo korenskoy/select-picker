@@ -180,7 +180,7 @@
                     }
                 });
             }
-            this.$elem.find(" option[value='" + selectedId + "']").removeAttr("selected");
+            this.$elem.find(" option[value='" + selectedId + "']").removeProp('selected');
             $elem.parent().remove();
             this.$elem.trigger('sp-change');
         },
@@ -223,7 +223,7 @@
                     this.$container.find(".pc-trigger").hide();
                 }
             }else{
-                this.$elem.find("option").removeAttr("selected");
+                this.$elem.find("option").removeProp('selected');
 
                 if (this.config.coloring[id]) {
                     this.$container.find(".pc-trigger").removeClass().addClass(this.config.coloring[selectedId] + " pc-trigger pc-element").contents().first().replaceWith($elem.text());
@@ -232,7 +232,7 @@
                 }
             }
 
-            this.$elem.find("option[value='" + id + "']").attr("selected", "selected");
+            this.$elem.find("option[value='" + id + "']").prop('selected', true);
 
         },
 
@@ -350,7 +350,7 @@
                 }
 
 
-                if($(elem).attr('selected') == 'selected'){
+                if($(elem).is(':selected')){
                     li.click();
                 }
 
